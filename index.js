@@ -10,3 +10,5 @@ const colleagues = [
 colleagues.forEach((colleague) => {
   console.log(chalk.keyword(colleague.color)(colleague.name));
 });
+
+  
