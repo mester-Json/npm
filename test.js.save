@@ -2,7 +2,7 @@ const fs = require('fs');
 const http = require('http');
 const axios = require('axios');
 
-
+// Task 1: Write a file using the fs module
 const contentToWrite = "This is the content of the file I'm writing.";
 fs.writeFile('sample.txt', contentToWrite, (err) => {
   if (err) {
@@ -10,7 +10,7 @@ fs.writeFile('sample.txt', contentToWrite, (err) => {
   } else {
     console.log("File 'sample.txt' has been written.");
     
-    
+    // Task 2: Read the previously created file and console.log the data
     fs.readFile('sample.txt', 'utf8', (err, data) => {
       if (err) {
         console.error("Error reading file:", err);
@@ -21,7 +21,7 @@ fs.writeFile('sample.txt', contentToWrite, (err) => {
   }
 });
 
-
+// Task 3: Create an HTTP server
 const server = http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/html' });
   res.end('<h1>Hello World</h1>');
@@ -33,7 +33,7 @@ server.listen(8000, 'localhost', () => {
 
 axios.get('http://www.google.com')
   .then((response) => {
-   
+    
     fs.writeFile('google.html', response.data, (err) => {
       if (err) {
         console.error("Error writing HTML file:", err);
